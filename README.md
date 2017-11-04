@@ -21,5 +21,7 @@ The following diagram shows the interaction between facebook and Okta.
 
 Things to note -
 
+At the time I built this plugin, I din't get enough buffer to externalize all the properties. So, please update the following components with your Okta environment info.
+
 1. Please update your Okta api token in OktaService.java
 2. Also update the social idp unique identifier in UserController.java
