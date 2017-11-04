@@ -21,9 +21,6 @@ import com.restfb.json.JsonObject;
 @Controller
 public class UserController {
 
-	String message = "Welcome to Spring MVC!";
-
-
 	@RequestMapping(value = "/getUser", method = RequestMethod.POST)
 	    public ModelAndView submitForm(@RequestParam(value="userId", required=false) String userId,
 	    		@ModelAttribute("user")OktaUserObj oktaUser, BindingResult result, SessionStatus status)
@@ -32,7 +29,7 @@ public class UserController {
 	//		user.setUserId(userId);
 			
 			OktaService oktaService = new OktaService();
-			//get fb access token from Okta
+			//get fb access token from Okta. the arguments are your userId and the unique id of the social idp
 			String access_token = oktaService.getfb_access_token(userId, "0oacewrnnvoqNakrM0h7");
 			
 			FacebookService fbService = new FacebookService();

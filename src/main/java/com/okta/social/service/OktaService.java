@@ -88,7 +88,8 @@ public class OktaService implements UserBuilder {
 			HttpPost httpPost  = new HttpPost("https://business.oktapreview.com/api/v1/users/"+user.getId());
 			httpPost.addHeader("accept", "application/json");
 			httpPost.addHeader("content-type", "application/json");
-			httpPost.addHeader("Authorization", "SSWS "+"00Oirk4b4_w8lyG6rXvNyZgSe4CjCsPic7Qjg7X_ok");
+			//please update the api token of your org below
+			httpPost.addHeader("Authorization", "SSWS "+"enter the api token");
 			URI uri = httpPost.getURI();
 			System.out.println("URI ="+uri.toString());
 
