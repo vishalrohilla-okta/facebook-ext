@@ -6,7 +6,7 @@ This projects lays the basic foundation of retrieving depths of the data from fa
 
 How to set up/run the project -
 
-This is a maven project that you can import in the IDE. Or you can build the war and run on your favorite web/application server.
+This is a maven project that you can import in any IDE (I use eclipse). Or you can build the war and run on your favorite web/application server.
 
 The components used in the project are - 
 
