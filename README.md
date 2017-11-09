@@ -12,14 +12,26 @@ The components used in the project are -
 
 1. Okta Sign-in Widget (https://github.com/okta/okta-signin-widget)
 2. Okta Java SDK (https://github.com/okta/okta-sdk-java)
-2. Facebook SDK (https://github.com/restfb/restfb)
+3. Facebook SDK (https://github.com/restfb/restfb)
 
 
 The following diagram shows the interaction between facebook and Okta. 
 ![alt text](https://s1.postimg.org/12inbnhktb/authentication_extension_plugin_-_general_-_Page_1_1.png)
 
+# Steps
 
-Things to note -
+1. User clicks on Login with Facebook 
+2. Okta kicks off an OAuth flow and redirects the user to Facebook
+3. User authenticates, and facebook returns a Facebook access_token back to Okta. 
+Okta stores this user access_token on the user profile and returns an Okta access_token to the app. 
+4. Custom code/app that is part of this example requests the user ID of the user from the sessions /me endpoint. 
+5. With the User ID, we get the access_token for that user. The token is available bia the api/v1/idps/idpId/users/userID/credentials/tokens
+6. Using this access_token, leveraging facebook SDK, the app hits the facebook's /me endpoint and request the additonal scopes/values. 
+7. After pulling additional data, store the data in Okta's Universal Directory. 
+8. I have created the attributes before hand, and leveraged Okta SDK/API to update the user profile.
+9. The attributes can be created via Okta dashboard or the APIs.
+
+Note -
 
 At the time I built this plugin, I din't get enough buffer to externalize all the properties. So, please update the following components with your Okta environment info.
 
