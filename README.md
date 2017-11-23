@@ -16,7 +16,7 @@ The components used in the project are -
 
 
 The following diagram shows the interaction between facebook and Okta. 
-![alt text](https://s1.postimg.org/12inbnhktb/authentication_extension_plugin_-_general_-_Page_1_1.png)
+![alt text](https://imgur.com/a/R5K3c)
 
 # Steps
 
